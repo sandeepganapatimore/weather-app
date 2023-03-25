@@ -8,6 +8,7 @@ function FadeInSection({ children }) {
       entries.forEach((entry) => setVisible(entry.isIntersecting));
     });
     observer.observe(domRef.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     return () => observer.unobserve(domRef.current);
   }, []);
   return (
