@@ -35,7 +35,9 @@ function App(props) {
 
   useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city.toLowerCase()}&appid=4059fb0e147718daac2748e3ca7073c2&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city.toLowerCase()}&appid=${
+        process.env.REACT_APP_WEATHER_KEY
+      }&units=metric`
     )
       .then((res) => res.json())
       .then((data) => {
